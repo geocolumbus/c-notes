@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/georgecampbell/CLionProjects/c-notes/main.c
+stdio.h
+-
+limits.h
+-
+float.h
+-
+stdbool.h
+-
+
