@@ -4,6 +4,9 @@
 #include <stdbool.h> // boolean library
 
 int main() {
+
+    // variables and data types
+
     bool b;                 // 1 bit,   false (0) or true (1)      %d
 
     char c;                 //  8 bits, -128 to 127                %c, %d
