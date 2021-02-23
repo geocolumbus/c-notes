@@ -165,6 +165,5 @@ int main() {
     fclose(fp);
     printf("%s", buf);
 
-
     return 0;
 }
