@@ -1,7 +1,9 @@
 #include <stdio.h>   // standard io
+#include <stdlib.h>  // standard lib
 #include <limits.h>  // char, int limits
 #include <float.h>   // float limits
 #include <stdbool.h> // boolean library
+#include <string.h>  // strings
 
 int main() {
 
@@ -24,6 +26,13 @@ int main() {
     float f;                // 1.175494e-38 to 3.402823e+38                            %e
     double d;               // 2.225074e-308 to 1.797693e+308                          %e
     long double ld;         // .362103e-4932 to 1.189731e+4932                        %Le
+
+    // ----- S T R I N G S ---------------------------------------------------------------------------------------------
+
+    char whome[] = "George Campbell";
+    char other[32];
+    strcpy(other, whome);
+    printf("%s \n", other);
 
     // ----- L O O P S -------------------------------------------------------------------------------------------------
 
@@ -107,14 +116,27 @@ int main() {
 
     int *ptr;
     int pval = 7;
-    int *ptr1;
-    int pval1 = 6;
-
     ptr = &pval;
-    ptr1 = &pval1;
-
     printf("ptr = %x, pval = %d\n", ptr, *ptr);
-    printf("ptr1 = %x, pval1 = %d\n", ptr1, *ptr1);
+
+    int *pa = malloc(2 * sizeof(int));
+    *pa = 3;
+    *(pa + 1) = 4;
+    printf("%x, %d, %d\n", pa, *pa, *(pa + 1));
+
+    // ----- S T R U C T -----------------------------------------------------------------------------------------------
+
+    struct Person {
+        char name[50];
+        int age;
+        float salary;
+    } person;
+
+    strcpy(person.name, "George Campbell");
+    person.age = 54;
+    person.salary = 60000;
+
+    printf("%s %d %f", person.name, person.age, person.salary);
 
     return 0;
 }

@@ -9,10 +9,14 @@
 /Users/georgecampbell/CLionProjects/c-notes/main.c
 stdio.h
 -
+stdlib.h
+-
 limits.h
 -
 float.h
 -
 stdbool.h
+-
+string.h
 -
 
