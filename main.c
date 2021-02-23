@@ -123,6 +123,7 @@ int main() {
     *pa = 3;
     *(pa + 1) = 4;
     printf("%x, %d, %d\n", pa, *pa, *(pa + 1));
+    free(pa);
 
     // ----- S T R U C T -----------------------------------------------------------------------------------------------
 
@@ -136,7 +137,34 @@ int main() {
     person.age = 54;
     person.salary = 60000;
 
-    printf("%s %d %f", person.name, person.age, person.salary);
+    printf("%s %d %f\n", person.name, person.age, person.salary);
+
+    // ----- F I L E S -------------------------------------------------------------------------------------------------
+
+    FILE *fp;
+    // r, w, a, r+ (read, write), w+ (read, write, create), a+ (read, append, create)
+    // must use the full path
+    fp = fopen("/Users/georgecampbell/CLionProjects/c-notes/george.txt", "w+");
+    if (fp == NULL) {
+        printf("Failed to open file\n");
+        exit(1);
+    }
+
+    int tt = 39343;
+    fprintf(fp, "This data was written to a file: %d\n", tt);
+    fclose(fp);
+
+    fp = fopen("/Users/georgecampbell/CLionProjects/c-notes/george.txt", "r");
+    if (fp == NULL) {
+        printf("Failed to open file\n");
+        exit(1);
+    }
+
+    char buf[255];
+    fgets(buf, 255, fp);
+    fclose(fp);
+    printf("%s", buf);
+
 
     return 0;
 }
