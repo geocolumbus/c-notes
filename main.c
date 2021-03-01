@@ -1,9 +1,8 @@
 #include <stdio.h>   // standard io
 #include <stdlib.h>  // standard lib
-#include <limits.h>  // char, int limits
-#include <float.h>   // float limits
 #include <stdbool.h> // boolean library
 #include <string.h>  // strings
+#include <stddef.h>  // standard definitions
 
 char fn1(void) { return 'g'; }
 
@@ -171,5 +170,11 @@ int main() {
     fclose(fp);
     printf("%s", buf);
 
+    // ----- M O D U L E S ---------------------------------------------------------------------------------------------
+
+    // see - https://www.icosaedro.it/c-modules.html
+    // see - http://cvs.icosaedro.it:8080/viewvc/public/acm/src/util/
+
     return 0;
 }
+
